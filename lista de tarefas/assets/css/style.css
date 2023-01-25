@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa&family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-color: rgba(0, 80, 209, 0.693);
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 64rem;
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px white;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.task-content {
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 3rem;
+    padding: 0 0 2rem 0;
+    border-bottom: 1px solid lightblue;
+}
+
+.task-content input {
+    padding: 1rem;
+    width: 30rem;
+    margin-right: 2rem;
+    border: none;
+    box-shadow: 0 0 2px black;
+    border-radius: 0.5rem;
+}
+
+.task-content input:focus {
+    box-shadow: 0 0 4px 3px var(--primary-color);
+    transition: all 300ms ease-in-out;
+}
+
+
+
+.task-content button {
+    font-weight: bold;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.task-content button:hover {
+    transition: all 300ms ease-in-out;
+    background-color: var(--primary-color);
+    color: #fff;
+
+}
+
+.tasks-ul li {
+
+    list-style: none;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.tasks-ul li button {
+    padding: 0.5rem 3rem;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    background-color: transparent;
+}
+
+.tasks-ul li button:hover {
+    transition: all 300ms ease-in-out;
+    background-color: rgba(0, 0, 0, 0.226);
+}
