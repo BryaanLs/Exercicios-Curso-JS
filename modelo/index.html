@@ -11,13 +11,56 @@
 
 <body>
     <section class="container">
-        <h1>Lorem</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt aspernatur accusantium rerum, omnis
-            dolorem hic nobis minus, cupiditate earum deserunt libero dolorum quam architecto cumque non quia pariatur
-            inventore.</p>
+
+        <body>
+            <h1>Entre em contato</h1>
+            <form id="contact-form" action="" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <!-- 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 -->
+
+        </body>
+
+
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdn.sendinblue.com/sdk/api/v3/sib-api-v3-sdk.min.js"></script> -->
+    <script>const form = document.getElementById('contact-form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
 
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
 
+            axios.post('https://api.sendinblue.com/v3/smtp/email', {
+                "sender": { "name": name, "email": email },
+                "to": [{ "email": "zlucason1@gmail.com" }],
+                "subject": "Mensagem do formulário de contato",
+                "htmlContent": `<p>${message}</p>`,
+            }, {
+                headers: {
+                    'api-key': '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',
+                },
+            })
+                .then(function (response) {
+                    alert('Mensagem enviada com sucesso!');
+                    form.reset();
+                })
+                .catch(function (error) {
+                    alert('Ocorreu um erro ao enviar a mensagem.');
+                    console.error(error);
+                });
+        });</script>
     <script src="./assets/js/main.js"></script>
 </body>
 
